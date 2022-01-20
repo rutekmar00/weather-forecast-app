@@ -1,8 +1,14 @@
 import "./styles.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Input(props) {
   const [inputText, setInputText] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    props.setJsonData(null);
+  }, []);
 
   const changeInput = (event) => {
     setInputText(event.target.value);
@@ -36,6 +42,10 @@ export default function Input(props) {
     }
   };
 
+  const selectCity = () => {
+    navigate("/city");
+  };
+
   return (
     <>
       <div className="search">
@@ -46,7 +56,15 @@ export default function Input(props) {
               onChange={changeInput}
               value={inputText}
               placeholder="Write city"
-            ></input>
+            />
+            {props.jsonData ? (
+              <ul className="dropdown">
+                <li onClick={selectCity}>
+                  <span>{props.jsonData.name}, </span>
+                  <span>{props.jsonData.sys.country} </span>
+                </li>
+              </ul>
+            ) : null}
           </div>
           <button disabled={!(inputText.trim().length > 0)}>Search</button>
         </form>

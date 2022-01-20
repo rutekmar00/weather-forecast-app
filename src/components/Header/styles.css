@@ -3,3 +3,21 @@
   text-align: center;
   justify-content: center;
 }
+
+.button-back {
+  margin-right: 15px;
+  cursor: pointer;
+  min-width: 5vw;
+  background-color: rgb(172, 150, 150);
+}
+
+@media (max-width: 500px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .button-back {
+    margin: auto;
+    width: 20%;
+  }
+}
