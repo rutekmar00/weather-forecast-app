@@ -1,0 +1,23 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  height: 40vh;
+}
+
+.card {
+  padding: 2rem;
+  background-color: bisque;
+  border-radius: 20px;
+}
+
+.temperature {
+  display: flex;
+  justify-content: center;
+}
+
+.temperature span {
+  display: inline-flex;
+  align-items: center;
+}

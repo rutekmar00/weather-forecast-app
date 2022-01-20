@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import MainCard from "../../components/MainCard";
 
 export default function WeatherDetails(props) {
   const [detailedData, setDetailedData] = useState(null);
@@ -19,7 +20,13 @@ export default function WeatherDetails(props) {
     return () => {
       setDetailedData(null);
     };
-  }, [props]);
+  }, []);
 
-  return <>{detailedData ? JSON.stringify(detailedData) : null}</>;
+  return (
+    <>
+      {detailedData ? (
+        <MainCard jsonData={detailedData} cityName={props.jsonData.name} />
+      ) : null}
+    </>
+  );
 }
