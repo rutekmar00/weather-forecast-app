@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Weather from "./containers/Weather";
+import WeatherDetails from "./containers/WeatherDetails";
 import { useState } from "react";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <>
       <Header />
       <Weather jsonData={jsonData} setJsonData={setJsonData} />
+      <WeatherDetails jsonData={jsonData} />
     </>
   );
 }
