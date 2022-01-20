@@ -1,9 +1,11 @@
 import "./styles.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Error from "../Error";
 
 export default function Input(props) {
   const [inputText, setInputText] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,10 +30,11 @@ export default function Input(props) {
       const json = await result.json();
       console.log(json);
       if (json.cod === "404" || json.cod === "429") {
-        console.log(json.message);
+        setError(json.message);
         props.setJsonData(null);
       } else {
         props.setJsonData(json);
+        setError("");
       }
       setInputText("");
     };
@@ -68,6 +71,7 @@ export default function Input(props) {
           </div>
           <button disabled={!(inputText.trim().length > 0)}>Search</button>
         </form>
+        {error ? <Error message={error} /> : null}
       </div>
     </>
   );
