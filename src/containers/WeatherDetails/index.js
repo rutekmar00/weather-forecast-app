@@ -9,7 +9,7 @@ export default function WeatherDetails(props) {
   useEffect(() => {
     const fetchData = async () => {
       const result = await fetch(
-        `http://api.openweathermap.org/data/2.5/onecall?lat=${props.jsonData.coord.lat}&lon=${props.jsonData.coord.lon}&units=metric&exclude=minutely,hourly&appid=${process.env.REACT_APP_API_KEY}`
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${props.jsonData.coord.lat}&lon=${props.jsonData.coord.lon}&units=metric&exclude=minutely,hourly&appid=${process.env.REACT_APP_API_KEY}`
       );
       const json = await result.json();
       setDetailedData(json);

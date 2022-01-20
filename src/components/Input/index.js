@@ -23,7 +23,7 @@ export default function Input(props) {
     event.preventDefault();
     const fetchData = async () => {
       const result = await fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${inputText.trim()}&appid=${
+        `https://api.openweathermap.org/data/2.5/weather?q=${inputText.trim()}&appid=${
           process.env.REACT_APP_API_KEY
         }`
       );
