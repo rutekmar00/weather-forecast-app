@@ -1,5 +1,7 @@
+import Header from "./components/Header";
+
 function App() {
-  return <div className="App">Weather forecast application</div>;
+  return <Header />;
 }
 
 export default App;
