@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MainCard from "../../components/MainCard";
+import CardList from "../../components/CardList";
 
 export default function WeatherDetails(props) {
   const [detailedData, setDetailedData] = useState(null);
@@ -25,7 +26,10 @@ export default function WeatherDetails(props) {
   return (
     <>
       {detailedData ? (
-        <MainCard jsonData={detailedData} cityName={props.jsonData.name} />
+        <>
+          <MainCard jsonData={detailedData} cityName={props.jsonData.name} />
+          <CardList dailyData={detailedData.daily.slice(1)} />
+        </>
       ) : null}
     </>
   );

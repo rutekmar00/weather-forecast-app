@@ -1,0 +1,28 @@
+.card-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.list-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 90%;
+  justify-content: center;
+}
+
+.card-day-item {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: burlywood;
+  text-align: center;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.image-span {
+  display: inline-flex;
+  justify-content: center;
+}
