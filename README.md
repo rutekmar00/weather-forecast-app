@@ -1,7 +1,7 @@
 # weather-forecast-app
 
 > The project was created as part of the front-end developer interview process. The purpose of the application is to display a weather forecast for a city. The application was created with React using OpenWeatherMap API.
-> <br/> > \*\*Live demo here https://instagram-clone-a6ece.web.app/.
+> <br/> > \*\*Live demo here https://weather-forecast-app-49b9a.web.app/.
 
 ## Table of Contents
 
